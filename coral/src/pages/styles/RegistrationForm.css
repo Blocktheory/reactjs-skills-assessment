@@ -1,0 +1,58 @@
+.loginContainer {
+  max-width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: #f5efff;
+}
+.regContainer {
+  background: #f5efff;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.6em;
+  margin-top: -1.2rem;
+  margin-bottom: 1rem;
+}
+/* Center the button horizontally */
+.fullWidthBtn {
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.fullWidthBtn:hover {
+  background-color: #56a8de;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .m-md-2 {
+    margin: 2rem !important; /* Adjust margin for md screen */
+  }
+}
+
+@media (max-width: 767px) {
+  .overflowFix {
+    margin: 0 !important;
+    /* margin-top: 10rem; */
+    align-items: flex-start;
+    overflow-y: auto; /* Add scroll bar for overflow content */
+    max-height: 90vh; /* Set maximum height to viewport height */
+  }
+}
+
+@media (min-width: 576px) {
+  .loginMediaquery {
+    width: 96%;
+  }
+}
+
+@media (min-width: 768px) {
+  .loginMediaquery {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  .loginMediaquery {
+    width: 50%;
+  }
+}
