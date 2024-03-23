@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { MDBContainer, MDBInput, MDBBtn } from "mdb-react-ui-kit";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import { useNavigate } from "react-router-dom";
 import Toaster from "../components/Toaster";
@@ -12,24 +11,17 @@ const Login = () => {
   const formik = useFormik({
     initialValues: {
       email: "",
-      password: "",
     },
     validationSchema: Yup.object({
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
-      password: Yup.string()
-        .min(5, "Password must be at least 5 characters")
-        .required("Password is required"),
     }),
 
     onSubmit: async (values) => {
       try {
         const users = JSON.parse(localStorage.getItem("FormData")) || [];
-        const findUser = users.find(
-          (user) =>
-            user.email === values.email && user.password === values.password
-        );
+        const findUser = users.find((user) => user.email === values.email);
 
         if (findUser) {
           Toaster.success("User logged in successfully");
@@ -37,7 +29,7 @@ const Login = () => {
           await new Promise((resolve) => setTimeout(resolve, 2000));
           navigate("/home");
         } else {
-          Toaster.error("Invalid email or password.");
+          Toaster.error("Invalid email.");
         }
       } catch (error) {
         console.error("Error:", error);
@@ -46,60 +38,50 @@ const Login = () => {
     },
   });
   return (
-    <>
-      <MDBContainer className="p-3 my-5 d-flex flex-column rounded-5 loginMediaquery background loginContainer">
-        <h3
-          style={{ color: "#0468aa" }}
-          className="fw-bold mb-4 mt-3 pb-2 pb-md-0 mb-md-5 text-center"
-        >
-          Login Form
-        </h3>
-        <form onSubmit={formik.handleSubmit} className="background">
-          <MDBInput
-            wrapperClass="mb-4"
-            label="Email"
-            size="lg"
-            id="email"
-            type="email"
-            {...formik.getFieldProps("email")}
-          />
-          {formik.touched.email && formik.errors.email ? (
-            <div className="error-text">{formik.errors.email}</div>
-          ) : null}
+    <div className="reg-container">
+      <div className="main">
+        <div className="image-cont"></div>
+        <div className="form-cont">
+          <div className="header-cont">
+            <h2>Login</h2>
+            <form className="form" onSubmit={formik.handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="Email">Email</label>
+                <div className="input-box">
+                  <input
+                    type="text"
+                    placeholder="you@domain.com"
+                    {...formik.getFieldProps("email")}
+                  />
+                </div>
+              </div>
+              {formik.touched.email && formik.errors.email ? (
+                <div className="error-text">{formik.errors.email}</div>
+              ) : null}
 
-          <MDBInput
-            wrapperClass="mb-4"
-            label="Password"
-            size="lg"
-            id="password"
-            type="password"
-            {...formik.getFieldProps("password")}
-          />
-          {formik.touched.password && formik.errors.password ? (
-            <div className="error-text">{formik.errors.password}</div>
-          ) : null}
-
-          <MDBBtn className="mb-4 fullWidthBtn" size="lg" type="submit">
-            Submit
-          </MDBBtn>
-        </form>
-        <div className="text-center">
-          <p>
-            Not registered yet?{" "}
-            <a
-              href="#!"
-              className="text-decoration-none"
-              onClick={() => {
-                navigate("/");
-              }}
-            >
-              Register
-            </a>
-          </p>
+              <button className="fullWidthBtn" type="submit">
+                Login
+              </button>
+              <div className="text-center">
+                <p>
+                  Not Registered?{" "}
+                  <a
+                    href="#!"
+                    className="text-decoration-none"
+                    onClick={() => {
+                      navigate("/");
+                    }}
+                  >
+                    Signup
+                  </a>
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
-      </MDBContainer>
-      <Toaster />
-    </>
+      </div>
+      <Toaster/>
+    </div>
   );
 };
 
