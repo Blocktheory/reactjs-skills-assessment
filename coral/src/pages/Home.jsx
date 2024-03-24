@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Home.css";
 import ProductCard from "../components/Cards/ProductCard";
-import { MagnifyingGlass } from "react-loader-spinner";
+import { ProgressBar } from "react-loader-spinner";
+import Footer from "../components/footer/Footer";
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const getData = async () => {
+    setLoading(true);
     try {
       const res = await fetch(`https://fakestoreapi.com/products?limit=8`);
       const data = await res.json();
       setData(data);
       setLoading(false);
     } catch (error) {
-      
+      setLoading(false);
       alert("Error getting products data");
       console.log(error);
     }
@@ -23,6 +25,12 @@ const Home = () => {
     getData();
   }, []);
 
+  const scrollToTop = () =>{
+    window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+    });
+  };
   return (
     <div className="home-page">
       <div className="navbar">
@@ -69,7 +77,21 @@ const Home = () => {
           />
         </svg>
       </div>
-      <div className="submenu"></div>
+      <div className="submenu">
+        {loading ? (
+          <ProgressBar
+            visible={true}
+            height="80"
+            width="80"
+            color="#4fa94d"
+            ariaLabel="progress-bar-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        ) : (
+          ""
+        )}
+      </div>
 
       <section className="products-section">
         <div className="products-container">
@@ -95,20 +117,18 @@ const Home = () => {
               Filter
             </div>
           </div>
-          
+
           <div className="products-list">
-            {data ? (
-              data.map((item) => {
-                return <ProductCard item={item} />;
-              })
-            ) : null}
+            {data
+              ? data.map((item) => {
+                  return <ProductCard item={item} />;
+                })
+              : null}
           </div>
         </div>
       </section>
 
-      <footer>
-        
-      </footer>
+      <Footer scroll={scrollToTop} />
     </div>
   );
 };
