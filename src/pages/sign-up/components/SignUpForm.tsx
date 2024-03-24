@@ -1,4 +1,5 @@
 import RadioButton from '@/components/ui/RadioButton'
+import { SignupSchema } from '@/utils'
 import { Field, Form, Formik } from 'formik'
 import styles from './SignUpForm.module.css'
 
@@ -15,6 +16,7 @@ export default function SignUpForm() {
           file: null,
           isAgreeTerms: false,
         }}
+        validationSchema={SignupSchema}
         onSubmit={(values) => {
           console.log(values)
           alert(
@@ -30,12 +32,14 @@ export default function SignUpForm() {
               name="name"
               placeholder="What should we call you?"
               type="text"
+              required
             />
             <label htmlFor="aboutYourself">About Yourself</label>
             <Field
               name="aboutYourself"
               placeholder="Describe in brief"
               type="text"
+              required
             />
             <label htmlFor="country">Country</label>
             <Field
@@ -44,6 +48,7 @@ export default function SignUpForm() {
               id="country"
               name="country"
               type="select"
+              required
             >
               <option value="" disabled>
                 Select country
@@ -57,10 +62,20 @@ export default function SignUpForm() {
               <label>Gender</label>
               <div className={styles.gender}>
                 <div className={styles.genderMale}>
-                  <RadioButton name="gender" value="male" label="Male" />
+                  <RadioButton
+                    required
+                    name="gender"
+                    value="male"
+                    label="Male"
+                  />
                 </div>
                 <div className={styles.genderFemale}>
-                  <RadioButton name="gender" value="female" label="Female" />
+                  <RadioButton
+                    required
+                    name="gender"
+                    value="female"
+                    label="Female"
+                  />
                 </div>
               </div>
             </div>
@@ -79,14 +94,15 @@ export default function SignUpForm() {
                         // @ts-ignore
                         setFieldValue('file', evt?.currentTarget?.files[0])
                       }}
+                      required
                     />
                   )}
                 </Field>
               </label>
             </div>
             <label>
-              <Field type="checkbox" name="isAgreeTerms" />I agree to terms and
-              conditions
+              <Field type="checkbox" name="isAgreeTerms" required />I agree to
+              terms and conditions
             </label>
             <button className={styles.submitBtn} type="submit">
               Create account

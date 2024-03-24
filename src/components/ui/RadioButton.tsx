@@ -4,6 +4,7 @@ type RadioButtonProps = {
   label: string
   name: string
   value: string
+  required: boolean
 }
 
 export default function RadioButton({ label, ...props }: RadioButtonProps) {

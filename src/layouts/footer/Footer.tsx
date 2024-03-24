@@ -75,9 +75,9 @@ export default function Footer() {
         <div className={styles.bottomWrapper}>
           <small>©2024 Coral, Inc.</small>
           <div>
-            <img width={220} src={iconsPayment} alt="" />
+            <img width={220} src={iconsPayment} alt="Payment icons image" />
           </div>
-          <small className={styles.scrollToTop}>Sroll To Top</small>
+          <small onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className={styles.scrollToTop}>Sroll To Top</small>
         </div>
       </section>
     </footer>

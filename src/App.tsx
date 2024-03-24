@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 import Footer from './layouts/footer/Footer'
 import Header from './layouts/header/Header'
@@ -7,7 +8,9 @@ export default function App() {
     <>
       <Header />
       <main>
-        <Outlet />
+        <Suspense fallback="loading...">
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
     </>
