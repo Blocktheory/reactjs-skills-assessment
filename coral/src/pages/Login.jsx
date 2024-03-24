@@ -46,9 +46,10 @@ const Login = () => {
             <h2>Login</h2>
             <form className="form" onSubmit={formik.handleSubmit}>
               <div className="form-group">
-                <label htmlFor="Email">Email</label>
+                <label htmlFor="email">Email</label>
                 <div className="input-box">
                   <input
+                  id="email"
                     type="text"
                     placeholder="you@domain.com"
                     {...formik.getFieldProps("email")}

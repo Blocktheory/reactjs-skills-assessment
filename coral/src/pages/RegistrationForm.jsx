@@ -67,9 +67,10 @@ const RegistrationForm = () => {
             <h2>Create an account</h2>
             <form className="form" onSubmit={formik.handleSubmit}>
               <div className="form-group">
-                <label htmlFor="Name">Name</label>
+                <label htmlFor="name">Name</label>
                 <div className="input-box">
                   <input
+                  id="name"
                     type="text"
                     placeholder="What should we call you?"
                     {...formik.getFieldProps("name")}
@@ -80,9 +81,10 @@ const RegistrationForm = () => {
                 <div className="error-text">{formik.errors.name}</div>
               ) : null}
               <div className="form-group">
-                <label htmlFor="About yourself">About yourself</label>
+                <label htmlFor="about">About yourself</label>
                 <div className="input-box">
                   <input
+                    id="about"
                     type="text"
                     placeholder="Describe in brief"
                     {...formik.getFieldProps("description")}
@@ -93,7 +95,7 @@ const RegistrationForm = () => {
                 <div className="error-text">{formik.errors.description}</div>
               ) : null}
               <div className="form-group">
-                <label htmlFor="Country">Country</label>
+                <label htmlFor="country">Country</label>
                 <div className="input-box">
                   <select
                     id="country"
@@ -114,9 +116,10 @@ const RegistrationForm = () => {
                 <div className="error-text">{formik.errors.country}</div>
               ) : null}
               <div className="form-group">
-                <label htmlFor="Email">Email</label>
+                <label htmlFor="email">Email</label>
                 <div className="input-box">
                   <input
+                    id="email"
                     type="text"
                     placeholder="you@domain.com"
                     {...formik.getFieldProps("email")}
@@ -127,8 +130,8 @@ const RegistrationForm = () => {
                 <div className="error-text">{formik.errors.email}</div>
               ) : null}
               <div className="gender-group">
-                <label htmlFor="Gender">Gender</label>
-                <div className="gender-input-box">
+                <label htmlFor="gender">Gender</label>
+                <div className="gender-input-box" id="gender">
                   <div className="input-frame">
                     <MDBRadio
                       name="gender"
@@ -157,8 +160,8 @@ const RegistrationForm = () => {
                 <div className="error-text">{formik.errors.gender}</div>
               ) : null}
               <div className="profile-form-group">
-                <label htmlFor="Profile Pic">Profile Pic</label>
-                <div className="profile-input-box">
+                <label htmlFor="profile">Profile Pic</label>
+                <div className="profile-input-box" id="profile">
                   <div className="profile-frame">
                     <p>
                       <span>+</span>Upload Pic

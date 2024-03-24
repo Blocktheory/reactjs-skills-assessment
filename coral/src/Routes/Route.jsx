@@ -7,9 +7,9 @@ import Home from "../pages/Home";
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<RegistrationForm />} />
-      <Route exact path="/login" element={<Login />} />
-      <Route exact path="/home" element={<Home />} />
+      <Route path="/" index element={<RegistrationForm />} />
+      <Route path="/login" index element={<Login />} />
+      <Route path="/home" index element={<Home />} />
     </Routes>
   );
 };
