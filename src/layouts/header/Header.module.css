@@ -1,0 +1,9 @@
+.header {
+  display: grid;
+  place-content: center;
+  background-color: #f4f4f5;
+}
+
+.headerImage {
+  padding: 1rem;
+}

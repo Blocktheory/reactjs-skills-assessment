@@ -1,0 +1,61 @@
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80rem;
+  margin: 2.6rem auto;
+  font-weight: 300;
+  flex-wrap: wrap;
+}
+
+.top > div {
+  padding: 0.4rem 0.8rem;
+}
+
+.top-description {
+  max-width: 400px;
+}
+
+.top-social-icons {
+  display: flex;
+  gap: 2rem;
+}
+
+.top-logo-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.top li {
+  padding: 0.3rem 0;
+}
+
+.top-social-icons *:hover,
+.top li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.bottom {
+  background: black;
+  color: white;
+}
+
+.bottom-wrapper * {
+  padding: 0.5rem 0;
+}
+
+.bottom-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80rem;
+  margin: auto;
+}
+
+.scroll-to-top:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

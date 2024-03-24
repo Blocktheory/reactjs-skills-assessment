@@ -1,0 +1,95 @@
+.signup-form-container {
+  margin: 2rem auto;
+  width: 30rem;
+  /* max-width: 30rem; */
+}
+
+.signup-form-heading {
+  text-align: center;
+}
+
+.signup-form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.signup-form-container input[type='text'],
+.country,
+.gender-female,
+.gender-male,
+.file-label {
+  padding: 1rem;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form-container input::placeholder,
+.country {
+  opacity: 0.6;
+}
+
+.signup-form-container input[type='select'] {
+  outline: 1px solid red;
+}
+
+.country {
+  background-color: white;
+}
+
+.gender {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.7rem;
+}
+
+.gender-male,
+.gender-female {
+  padding: 1rem 2rem;
+}
+
+.signup-form-container input[type='file'] {
+  outline: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.file-label {
+  margin-top: 0.7rem;
+  display: inline-block;
+  color: #2478f7;
+  cursor: pointer;
+  text-align: center;
+  padding: 1.6rem 1rem;
+}
+
+.signup-form-container input[type='checkbox'] {
+  padding: 1rem;
+  border: 1px solid black;
+  margin: 1rem 0;
+  margin-right: 0.6rem;
+}
+
+.submit-btn {
+  all: unset;
+  cursor: pointer;
+  background-color: #eb5017;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  padding: 0.8rem 0;
+}
+
+.signup-form-footer {
+  text-align: center;
+}
+
+.login {
+  color: #eb5017;
+  cursor: pointer;
+}

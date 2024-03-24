@@ -1,0 +1,24 @@
+.single-product-card {
+  /* height: 390px; */
+  width: 270px;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+}
+
+.single-product-image {
+  height: 200px;
+}
+
+.single-product-title {
+  margin: 0.8rem 0;
+}
+
+.single-product-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single-product-category {
+  color: #808080;
+}

@@ -1,0 +1,19 @@
+.signup-page-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.left {
+  /* flex: 1; */
+  /* outline: 1px solid red; */
+  padding: 1rem;
+}
+
+.right {
+  /* outline: 1px solid red; */
+  padding: 1rem;
+  /* flex: 1; */
+}

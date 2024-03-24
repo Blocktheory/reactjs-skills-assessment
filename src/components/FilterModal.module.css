@@ -1,0 +1,23 @@
+.category-list li {
+  padding: 0.8rem 0;
+}
+
+.category-list li input {
+  padding: 0.4rem;
+  margin-right: 1rem;
+}
+
+.done-btn {
+  all: unset;
+  background-color: black;
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  padding: 0.4rem 0.9rem;
+  margin: 1rem auto;
+  cursor: pointer;
+  text-align: center;
+  width: 90px;
+  border: 0;
+  outline: 0;
+}
