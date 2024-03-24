@@ -1,0 +1,88 @@
+/* General styles */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid rgb(190, 169, 169);
+    border-radius: 5px;
+    display: flex;
+}
+
+.left-section {
+    flex: 1; /* Make the left section take 50% of the container */
+    margin-right: 20px; /* Add space between the sections */
+}
+
+.right-section {
+    flex: 1; /* Make the right section take 50% of the container */
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.submit-btn {
+    background-color: #f2731f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #f9740f;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Stack the sections vertically on mobile */
+    }
+
+    .left-section {
+        margin-right: 0; /* Remove the right margin on mobile */
+    }
+}

@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import Signup from './components/Signup';
+import ProductPage from './components/ProductPage';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('signup');
+
+  const navigateTo = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Navigation bar */}
+      <div className="navbar">
+        <button onClick={() => navigateTo('signup')}>Signup</button>
+        <button onClick={() => navigateTo('product')}>Product Page</button>
+      </div>
+
+      {/* Conditional rendering based on currentPage state */}
+      {currentPage === 'signup' && <Signup />}
+      {currentPage === 'product' && <ProductPage />}
     </div>
   );
 }
+
+
 
 export default App;

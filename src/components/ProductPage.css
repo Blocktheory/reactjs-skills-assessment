@@ -1,0 +1,168 @@
+/* General styles */
+.product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.select-wrapper {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.product {
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: calc(25% - 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.bold {
+  font-size: 50px;
+}
+
+.product-page-container {
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: white;
+  color: black;
+  padding: 60px;
+  text-align: center;
+}
+
+.foot-name {
+  font-size: 50px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer h5 {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.foot-para {
+  white-space: pre-line;
+}
+
+.footer p {
+  margin: 5px 0;
+  text-align: left;
+}
+
+.icons {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.icons > * {
+  margin: 0 10px;
+}
+
+.scroll-up {
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.payment-logos {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: rgb(27, 26, 26);
+  height: 80px;
+}
+
+.payment-logos > * {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  padding-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .product {
+    width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .footer-section {
+    margin: 20px 0;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+
+  .payment-logos {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .payment-logos > * {
+    width: 30px;
+    height: 30px;
+  }
+
+  .scroll-up {
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+  }
+  .product-page-container {
+    text-align: center;
+  }
+  
+  .product-page-container img {
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+
+  .select-wrapper {
+    width: 90%;
+  }
+}
