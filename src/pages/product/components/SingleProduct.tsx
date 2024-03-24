@@ -1,6 +1,11 @@
+import type { ProductType } from '@/types'
 import styles from './SingleProduct.module.css'
 
-export default function SingleProduct({ data }) {
+type SingleProductProps = {
+  data: ProductType
+}
+
+export default function SingleProduct({ data }: SingleProductProps) {
   return (
     <div className={styles.singleProductCard}>
       <div className={styles.singleProductImage}>

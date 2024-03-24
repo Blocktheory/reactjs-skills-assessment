@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import FilterModal from '@/components/FilterModal'
+import { API_BASE_URL } from '@/constants'
 import useFilterCategory from '@/hooks/useFilterCategory'
 import type { ProductType } from '@/types'
 import styles from './ProductPage.module.css'
@@ -16,7 +17,7 @@ export default function ProductPage() {
 
   useEffect(() => {
     ;(async () => {
-      const res = await fetch('https://fakestoreapi.com/products')
+      const res = await fetch(API_BASE_URL)
       if (!res.ok) throw new Error('Response is not OK!')
       const data = await res.json()
       setApiData(data)

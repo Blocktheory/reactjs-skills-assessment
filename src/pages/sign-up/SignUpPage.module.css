@@ -7,13 +7,9 @@
 }
 
 .left {
-  /* flex: 1; */
-  /* outline: 1px solid red; */
   padding: 1rem;
 }
 
 .right {
-  /* outline: 1px solid red; */
   padding: 1rem;
-  /* flex: 1; */
 }

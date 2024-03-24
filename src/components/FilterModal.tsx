@@ -1,5 +1,5 @@
 import { categories } from '@/constants'
-import { Button, Modal } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 
 import styles from './FilterModal.module.css'
 
