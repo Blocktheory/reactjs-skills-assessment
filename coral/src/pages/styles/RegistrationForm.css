@@ -18,7 +18,7 @@
   height: 1019px;
   padding: 20px 131px 20px 20px;
   border-radius: 20px;
-  opacity: 0px;
+  
   /* border: 2px solid red; */
   display: flex;
   flex-direction: row;
@@ -33,7 +33,7 @@
   left: 20px;
   gap: 0px;
   border-radius: 30px;
-  opacity: 0px;
+  
   background-image: url("../../assets/signup.png");
   /* border: 2px solid blue; */
 }
@@ -44,14 +44,14 @@
   top: 83.5px;
   left: 855px;
   /* gap: 32px; */
-  opacity: 0px;
+  
   /* border: 2px solid black; */
 }
 
 .header-cont {
   height: 43px;
   gap: 8px;
-  opacity: 0px;
+  
 }
 
 .header-cont h2 {
@@ -69,7 +69,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  opacity: 0px;
+  
   /* border: 2px solid blue; */
 }
 .form-group {
@@ -98,7 +98,7 @@ label {
   padding: 16px;
   gap: 12px;
   border-radius: 15px;
-  border: 1px 1px 2px 1px;
+  border-bottom: 2px solid #e3e3e3;
 }
 
 .input-box input {

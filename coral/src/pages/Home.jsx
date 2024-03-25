@@ -1,36 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import "./styles/Home.css";
 import ProductCard from "../components/Cards/ProductCard";
 import { ProgressBar } from "react-loader-spinner";
 import Footer from "../components/footer/Footer";
+import Dropdown from "../components/Dropdown/Dropdown";
+import axios from "axios";
+import { initState, productsReducer } from "./productsReducer";
+import { getApi } from "./api";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  const getData = async () => {
-    setLoading(true);
-    try {
-      const res = await fetch(`https://fakestoreapi.com/products?limit=8`);
-      const data = await res.json();
-      setData(data);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      alert("Error getting products data");
-      console.log(error);
-    }
+  const [state, dispatch] = useReducer(productsReducer, initState);
+  const [isOpen, setIsOpen] = useState(false);
+  const [filter, setFilter] = useState("");
+  const handleSelect = (option) => {
+    setFilter(option);
+    setIsOpen(false);
   };
-  useEffect(() => {
-    getData();
-  }, []);
 
-  const scrollToTop = () =>{
+  const scrollToTop = () => {
     window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+      top: 0,
+      behavior: "smooth",
     });
   };
+  useEffect(() => {
+    dispatch({ type: "LOADING" });
+    getApi(filter)
+      .then((result) => {
+        dispatch({ type: "SUCCESS", payload: result?.data });
+      })
+      .catch((err) => {
+        dispatch({ type: "ERROR" });
+        throw new Error("invalid action type");
+      });
+  }, [filter]);
+  console.log(state);
   return (
     <div className="home-page">
       <div className="navbar">
@@ -78,7 +83,7 @@ const Home = () => {
         </svg>
       </div>
       <div className="submenu">
-        {loading ? (
+        {/* {loading ? (
           <ProgressBar
             visible={true}
             height="80"
@@ -90,7 +95,7 @@ const Home = () => {
           />
         ) : (
           ""
-        )}
+        )} */}
       </div>
 
       <section className="products-section">
@@ -100,7 +105,7 @@ const Home = () => {
               <h2>Our Products</h2>
             </div>
           </div>
-          <div className="filter-cont">
+          <div className="filter-cont" onClick={() => setIsOpen(!isOpen)}>
             <div className="filter-button">
               <svg
                 width="20"
@@ -116,14 +121,17 @@ const Home = () => {
               </svg>
               Filter
             </div>
+            {isOpen && <Dropdown handleSelect={handleSelect} />}
           </div>
-
+          {/* {isOpen && <Dropdown handleSelect={handleSelect} />} */}
           <div className="products-list">
-            {data
-              ? data.map((item) => {
-                  return <ProductCard item={item} />;
-                })
-              : null}
+            {Array.isArray(state.res) ? (
+              state.res.map((item) => {
+                return <ProductCard item={item} />;
+              })
+            ) : (
+              <p>No products available</p>
+            )}
           </div>
         </div>
       </section>

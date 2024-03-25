@@ -70,7 +70,6 @@ const RegistrationForm = () => {
                 <label htmlFor="name">Name</label>
                 <div className="input-box">
                   <input
-                  id="name"
                     type="text"
                     placeholder="What should we call you?"
                     {...formik.getFieldProps("name")}
@@ -84,7 +83,6 @@ const RegistrationForm = () => {
                 <label htmlFor="about">About yourself</label>
                 <div className="input-box">
                   <input
-                    id="about"
                     type="text"
                     placeholder="Describe in brief"
                     {...formik.getFieldProps("description")}
@@ -97,11 +95,7 @@ const RegistrationForm = () => {
               <div className="form-group">
                 <label htmlFor="country">Country</label>
                 <div className="input-box">
-                  <select
-                    id="country"
-                    name="country"
-                    {...formik.getFieldProps("country")}
-                  >
+                  <select name="country" {...formik.getFieldProps("country")}>
                     <option value="" disabled>
                       Select Country
                     </option>
@@ -119,7 +113,6 @@ const RegistrationForm = () => {
                 <label htmlFor="email">Email</label>
                 <div className="input-box">
                   <input
-                    id="email"
                     type="text"
                     placeholder="you@domain.com"
                     {...formik.getFieldProps("email")}
@@ -202,7 +195,7 @@ const RegistrationForm = () => {
           </div>
         </div>
       </div>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };
