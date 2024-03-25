@@ -1,0 +1,22 @@
+.cardImage {
+    img{
+    width: 300px;
+    height: 400px;
+    }
+}
+.line2  {
+    display: flex;
+    justify-content: space-between;
+}
+.productCard    {
+    width: 300px;
+    height: auto;
+    width: calc((100% / 3) - 20px); /* Adjust for margin */
+    max-width: 300px; /* Maximum width of each card */
+    margin-bottom: 20px; /* Adjust margin between cards */
+    box-sizing: border-box;
+    font-size: 12px;
+}
+.productPrice, .productTitle {
+    font-weight: bold;
+}

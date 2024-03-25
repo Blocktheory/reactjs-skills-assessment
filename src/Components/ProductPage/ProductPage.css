@@ -1,0 +1,36 @@
+.header {
+    background: #1E28320D;
+    height: 59px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body   {
+    text-align: center;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    right: 100px;
+}
+.products   {
+    display: flex;
+    text-align: left;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.filterDiv {
+    display: flex;
+    margin-top: 10px;
+    /* justify-content: space-around; */
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+    overflow: hidden;
+    .filterCard{
+        background-color: #202f3e0d;
+        padding: 10px;
+    }
+}
