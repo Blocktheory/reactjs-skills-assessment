@@ -83,7 +83,7 @@ const Home = () => {
         </svg>
       </div>
       <div className="submenu">
-        {/* {loading ? (
+        {state?.loading ? (
           <ProgressBar
             visible={true}
             height="80"
@@ -95,7 +95,7 @@ const Home = () => {
           />
         ) : (
           ""
-        )} */}
+        )}
       </div>
 
       <section className="products-section">
