@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.homepage-container {
+  height: 100vh;
+  background-image: url("/home.png");
+background-size: cover;
+}
+
+.start-button {
+  background-color: #eb5017;
+  color: white;
+  width: 32vh;
+  height: 6vh;
+  font-size: 30px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 90%;
+}
+
+.flex-1.logo {
+  height: 100px;
+  width: 100px;
+  background-color: black;
+}
+.signup-image-block {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-direction: column;
+  background-image: url("/signup_showcase.png");
+  height: 98vh;
+  background-size: cover;
+  border-radius: 30px;
+}
+
+.layout-logo {
+  width: 50%;
+  height: 100%;
+  top: 20px;
+  left: 20px;
+  gap: 0px;
+  border-radius: 30px 0px 0px 0px;
+  opacity: 0px;
+}
+
+.credentials {
+  width: 454px;
+  height: 80px;
+  gap: 8px;
+  opacity: 0px;
+}
+
+.button-submit {
+  width: 454px;
+  height: 55px;
+  padding: 16px 24px 16px 24px;
+  gap: 10px;
+  border-radius: 8px 0px 0px 0px;
+  border: 1px 1px 2px 1px;
+  color:#eb5017;
+}
+
+.product-image{
+  height: 400px;
+  background-color: grey;
+}
+
+.product-list{
+  max-height: calc(100vh - 330px);
+}
+
+.footer-bottom{
+  background-color: #1E2832;
+  ;
+}
