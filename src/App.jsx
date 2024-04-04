@@ -10,8 +10,8 @@ function App() {
   };
 
   return (
-    <div className="flex justify-center items-center">
-      <div className="max-w-screen-lg w-full px-4">
+    <div className="">
+      <div className="">
         {formSubmitted ? <Product/> : <SignUp onSubmit={handleFormSubmission} />}
       </div>
     </div>

@@ -27,18 +27,18 @@ const SignUp = ({ onSubmit }) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-20">
-      <img
-        src={logo}
-        alt="Coral Image"
-        className="rounded-xl lg:w-1/2 lg:h-auto mt-10 max-w-full"
-      />
+    <div className="container mx-auto mt-10 items-center justify-center flex flex-col lg:flex-row gap-10">
+   <img
+    src={logo}
+    alt="Coral Image"
+    className="rounded-lg lg:w-1/3 h-auto mb-10 lg:mb-0"
+  />
 
-      <div className="w-full lg:w-96 p-6 mt-12">
-        <h2 className="text-3xl font-semibold mb-4 text-center">
-          Create an account
-        </h2>
-        <form className="space-y-4" onSubmit={handleSubmit}>
+  <div className="w-full lg:w-96 p-6">
+    <h2 className="text-3xl font-semibold mb-4 text-center">
+      Create an account
+    </h2>
+    <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block mb-1">
               Name
