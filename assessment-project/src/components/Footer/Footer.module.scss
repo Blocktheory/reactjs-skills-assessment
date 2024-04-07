@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+.footer_main {
+  padding-top: 40px;
+
+  @media (min-width: 768px) {
+    padding-top: 100px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 150px;
+  }
+
+  .top {
+    .row {
+      text-align: center;
+      @media (min-width: 1400px) {
+        text-align: left;
+      }
+    }
+    .footer_container {
+      @media (min-width: 576px) {
+        padding: 50px;
+      }
+
+      .company {
+        margin-bottom: 10px;
+        @media (min-width: 1400px) {
+          margin-bottom: 0px;
+        }
+        .logo {
+          width: 50%;
+          margin-bottom: 10px;
+
+          @media (min-width: 1400px) {
+            text-align: left;
+          }
+          .company-logo {
+            width: min(200px, 100%);
+            @media (min-width: 992px) {
+              width: 60%;
+            }
+            @media (min-width: 1400px) {
+              width: 85%;
+            }
+          }
+        }
+
+        .socials {
+          padding-top: 15px;
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 15px;
+
+          @media (min-width: 1400px) {
+            align-items: flex-start;
+            justify-content: flex-start;
+          }
+
+          .social {
+            width: 2.5em;
+            height: 2.5em;
+            background-color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: inherit;
+            svg {
+              width: 50%;
+              height: 50%;
+            }
+          }
+        }
+        .text {
+          color: #b5b6b8;
+          font-family: "Open Sans", sans-serif;
+          text-align: center;
+          font-weight: 400;
+          font-size: 1rem;
+          @media (min-width: 1400px) {
+            text-align: left;
+          }
+        }
+      }
+
+      .widgets {
+        .widget-container {
+          margin-top: 20px;
+          @media (min-width: 1400px) {
+            margin-top: 0px;
+          }
+
+          .title {
+            padding-bottom: 15px;
+            color: #000000;
+            text-align: center;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+
+            @media (min-width: 1400px) {
+              text-align: left;
+            }
+          }
+          .widget-content {
+            ul {
+              padding: 0;
+              list-style: none;
+              text-align: center;
+              @media (min-width: 1400px) {
+                text-align: left;
+              }
+            }
+            .details {
+              padding: 2.5px;
+              font-family: "Open Sans", sans-serif;
+              color: #1e2832;
+              font-weight: 400;
+              font-size: 1.2rem;
+            }
+          }
+
+          .contact {
+            padding: 2.5px;
+            color: #4d5a68;
+            // font-family: var(--secondary-font-family);
+            font-weight: 400;
+            font-size: 1.2rem;
+            a {
+              color: #b5b6b8;
+              font-size: 1.3rem;
+              transition: color 0.3s ease-in-out;
+
+              &:hover {
+                color: #5e5e5e;
+              }
+
+              small {
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    padding: 10px 0;
+    background-color: #1e2832;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+
+      @media (min-width: 992px) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+      .left-side-details {
+        color: #ffffff;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+        font-size: 0.8rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
